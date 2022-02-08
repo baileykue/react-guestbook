@@ -15,9 +15,14 @@ export default function GuestBook() {
     setUser(name);
     setNotes([...notes, { name, message }]);
 
-    setName('');
     setMessage('');
   }
+
+  function handleReset() {
+    setUser('');
+    setName('');
+  }
+
   return (
     <div>
       <form>
@@ -42,7 +47,7 @@ export default function GuestBook() {
 
         <button onClick={handleSubmit}>Leave Note</button>
 
-        {user && <p onClick={() => setUser('')}>not {user}????</p>}
+        {user && <p onClick={handleReset}>not {user}????</p>}
       </form>
     </div>
   );
