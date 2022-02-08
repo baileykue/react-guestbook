@@ -7,10 +7,12 @@ export function UserProvider({ children }) {
 
   const UserValues = { user, setUser };
 
-  return <UserContext value={UserValues}>{children}</UserContext>;
+  return (
+    <UserContext.Provider value={UserValues}>{children}</UserContext.Provider>
+  );
 }
 
-export const useUser = () => {
+export function useUser() {
   const context = useContext(UserContext);
 
   if (context === undefined) {
@@ -18,4 +20,4 @@ export const useUser = () => {
   }
 
   return context;
-};
+}
