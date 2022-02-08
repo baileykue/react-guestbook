@@ -17,3 +17,10 @@
   padding-top: 30px;
   padding-left: 35px;
 }
+
+.note_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
