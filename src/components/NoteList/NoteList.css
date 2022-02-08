@@ -1,22 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+
 .note_card {
   width: 225px;
   height: 225px;
   border-radius: 15px;
   padding: 15px;
+  margin: 25px;
   background-image: url('https://teachingrecipes.com/wp-content/blank-post-it-note-1.png');
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: 'Kristi', cursive;
+  font-size: large;
 }
 
 .note_text {
   padding-top: 30px;
   padding-left: 35px;
-}
-
-.cork {
-  height: fit-content;
-  background-image: url('https://media.istockphoto.com/photos/cork-board-picture-id531568741?b=1&k=20&m=531568741&s=170667a&w=0&h=T4jyb_-64aiaJWpkPcytjp8mUdLE8xFdt-jett7WD2M=');
-  border-radius: 15px;
-  margin: 25px;
-  gap: 15px;
 }

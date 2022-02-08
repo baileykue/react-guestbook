@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNote } from '../../context/NoteContext';
 import { useUser } from '../../context/UserContext';
+import styles from './GuestBook.css';
 
 export default function GuestBook() {
   const { user, setUser } = useUser();
@@ -8,6 +9,8 @@ export default function GuestBook() {
 
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+
+  const { form } = styles;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +28,7 @@ export default function GuestBook() {
 
   return (
     <div>
-      <form>
+      <form className={form}>
         {!user && (
           <label>
             Your Name:
@@ -47,7 +50,7 @@ export default function GuestBook() {
 
         <button onClick={handleSubmit}>Leave Note</button>
 
-        {user && <p onClick={handleReset}>not {user}????</p>}
+        {user && <p onClick={handleReset}>Not {user}????</p>}
       </form>
     </div>
   );
