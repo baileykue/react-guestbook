@@ -9,9 +9,6 @@ export default function GuestBook() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
-  console.log('user', user);
-  console.log('notes', notes);
-
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -24,14 +21,16 @@ export default function GuestBook() {
   return (
     <div>
       <form>
-        <label>
-          Your Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
+        {!user && (
+          <label>
+            Your Name:
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+        )}
 
         <label>
           Your Note:
@@ -41,6 +40,7 @@ export default function GuestBook() {
           />
         </label>
         <button onClick={handleSubmit}>Leave Note</button>
+        {user && <p onClick={() => setUser('')}>not {user}????</p>}
       </form>
     </div>
   );
