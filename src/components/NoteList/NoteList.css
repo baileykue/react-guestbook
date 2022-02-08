@@ -1,3 +1,14 @@
 .note_card {
-  border: 2px solid black;
+  width: 225px;
+  height: 225px;
+  border-radius: 15px;
+  padding: 15px;
+  background-image: url('https://teachingrecipes.com/wp-content/blank-post-it-note-1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.note_text {
+  padding-top: 30px;
+  padding-left: 35px;
 }
