@@ -39,7 +39,9 @@ export default function GuestBook() {
             onChange={(e) => setMessage(e.target.value)}
           />
         </label>
+
         <button onClick={handleSubmit}>Leave Note</button>
+
         {user && <p onClick={() => setUser('')}>not {user}????</p>}
       </form>
     </div>
