@@ -1,0 +1,8 @@
+.cork {
+  min-width: 1000px;
+  min-height: 1000px;
+  background-image: url('https://media.istockphoto.com/photos/cork-board-picture-id531568741?b=1&k=20&m=531568741&s=170667a&w=0&h=T4jyb_-64aiaJWpkPcytjp8mUdLE8xFdt-jett7WD2M=');
+  border-radius: 15px;
+  margin: 25px;
+  gap: 15px;
+}
