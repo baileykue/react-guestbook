@@ -1,10 +1,10 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 import { NoteProvider } from './context/NoteContext';
 import { UserProvider } from './context/UserContext';
 
-test('page renders with form and heaer', () => {
+test('page renders with form and header', () => {
   render(
     <UserProvider>
       <App />

@@ -10,7 +10,7 @@ export default function GuestBook() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
-  const { form } = styles;
+  const { form, emojis } = styles;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,6 +47,34 @@ export default function GuestBook() {
             onChange={(e) => setMessage(e.target.value)}
           />
         </label>
+
+        <feildset className={emojis}>
+          <legend>Emoji:</legend>
+          <label>
+            <input type="radio" />
+            <p>&#128514;</p>
+          </label>
+
+          <label>
+            <input type="radio" />
+            <p>&#127812;</p>
+          </label>
+
+          <label>
+            <input type="radio" />
+            <p>&#128190;</p>
+          </label>
+
+          <label>
+            <input type="radio" />
+            <p>&#127752;</p>
+          </label>
+
+          <label>
+            <input type="radio" />
+            <p>&#129409;</p>
+          </label>
+        </feildset>
 
         <button onClick={handleSubmit}>Leave Note</button>
 
