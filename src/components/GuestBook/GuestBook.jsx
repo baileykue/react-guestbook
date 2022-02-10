@@ -9,16 +9,17 @@ export default function GuestBook() {
 
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
-  const [emoji, setEmoji] = useState([]);
+  const [emoji, setEmoji] = useState('');
 
-  const { form, emojis } = styles;
+  const { form, emojis, checked } = styles;
 
   function handleSubmit(e) {
     e.preventDefault();
 
     setUser(name);
-    setNotes([...notes, { name, message }]);
+    setNotes([...notes, { name, message, emoji }]);
 
+    setEmoji('');
     setMessage('');
   }
 
@@ -49,53 +50,60 @@ export default function GuestBook() {
           />
         </label>
 
-        <feildset className={emojis}>
-          <legend>Emoji:</legend>
-          <label>
-            <input
-              type="radio"
-              value="&#128514;"
-              onChange={(e) => setEmoji(e.target.value)}
-            />
-            <p>&#128514;</p>
-          </label>
+        <label>
+          Emojis:
+          <div className={emojis}>
+            <label>
+              <input
+                type="radio"
+                name="emogi"
+                value="&#128514;"
+                onChange={(e) => setEmoji(e.target.value)}
+              />
+              <p>&#128514;</p>
+            </label>
 
-          <label>
-            <input
-              type="radio"
-              value="&#127812;"
-              onChange={(e) => setEmoji(e.target.value)}
-            />
-            <p>&#127812;</p>
-          </label>
+            <label>
+              <input
+                type="radio"
+                name="emogi"
+                value="&#127812;"
+                onChange={(e) => setEmoji(e.target.value)}
+              />
+              <p>&#127812;</p>
+            </label>
 
-          <label>
-            <input
-              type="radio"
-              value="&#128190;"
-              onChange={(e) => setEmoji(e.target.value)}
-            />
-            <p>&#128190;</p>
-          </label>
+            <label>
+              <input
+                type="radio"
+                name="emogi"
+                value="&#128190;"
+                onChange={(e) => setEmoji(e.target.value)}
+              />
+              <p>&#128190;</p>
+            </label>
 
-          <label>
-            <input
-              type="radio"
-              value="&#127752;"
-              onChange={(e) => setEmoji(e.target.value)}
-            />
-            <p>&#127752;</p>
-          </label>
+            <label>
+              <input
+                type="radio"
+                name="emogi"
+                value="&#127752;"
+                onChange={(e) => setEmoji(e.target.value)}
+              />
+              <p>&#127752;</p>
+            </label>
 
-          <label>
-            <input
-              type="radio"
-              value="&#129409;"
-              onChange={(e) => setEmoji(e.target.value)}
-            />
-            <p>&#129409;</p>
-          </label>
-        </feildset>
+            <label>
+              <input
+                type="radio"
+                name="emogi"
+                value="&#129409;"
+                onChange={(e) => setEmoji(e.target.value)}
+              />
+              <p>&#129409;</p>
+            </label>
+          </div>
+        </label>
 
         <button onClick={handleSubmit}>Leave Note</button>
 

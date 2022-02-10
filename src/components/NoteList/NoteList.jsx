@@ -12,7 +12,9 @@ export default function NoteList() {
         <div key={`${note.name}-${note.message}`} className={note_card}>
           <div className={note_text}>
             <p>-{note.name}</p>
-            <p>{note.message}</p>
+            <p>
+              {note.message} {note.emoji}
+            </p>
           </div>
         </div>
       ))}
