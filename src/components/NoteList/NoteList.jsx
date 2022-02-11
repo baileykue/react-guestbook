@@ -1,5 +1,6 @@
-import React from 'react';
 import { useNote } from '../../context/NoteContext';
+
+import React from 'react';
 import styles from './NoteList.css';
 
 export default function NoteList() {
