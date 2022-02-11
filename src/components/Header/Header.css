@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200&display=swap');
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-family: 'Martel', serif;
+  gap: 25px;
+}
