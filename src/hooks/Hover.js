@@ -19,3 +19,5 @@ export function useHover() {
   }, [ref.current]);
   return [ref, value];
 }
+
+// this hook used from https://usehooks.com/useHover/
