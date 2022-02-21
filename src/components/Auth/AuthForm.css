@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200&display=swap');
+
+.form {
+  font-family: 'Martel', serif;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.form input,
+textarea {
+  width: 250px;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 5px;
+  font-family: 'Martel', serif;
+  border: 2px solid black;
+}
+
+.form button {
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: 'Martel', serif;
+  border: 2px solid black;
+  margin-top: 25px;
+}
+
+.form button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}

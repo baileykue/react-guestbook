@@ -3,9 +3,22 @@ import { useState, createContext, useContext } from 'react';
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState(null);
 
-  const UserValues = { user, setUser };
+  const login = (email, password) => {
+    const loginSuccessful =
+      email === process.env.AUTH_EMAIL &&
+      password === process.env.AUTH_PASSWORD;
+    if (loginSuccessful) setUser({ email });
+    return loginSuccessful;
+  };
+
+  const logout = (callback) => {
+    setUser(null);
+    callback();
+  };
+
+  const UserValues = { user, setUser, login, logout };
 
   return (
     <UserContext.Provider value={UserValues}>{children}</UserContext.Provider>

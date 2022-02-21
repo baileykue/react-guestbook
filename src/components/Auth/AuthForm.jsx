@@ -1,8 +1,10 @@
 import React from 'react';
 
+import styles from './Authform.css';
+
 export default function AuthForm() {
   return (
-    <form>
+    <form className={styles.form}>
       <label>
         Email
         <input type="email" />
