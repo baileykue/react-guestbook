@@ -7,16 +7,22 @@ import styles from './Header.css';
 export default function Header() {
   const { header } = styles;
 
-  const { user } = useUser();
-  console.log('user', user);
+  const { user, logout } = useUser();
 
   const [hoverRef, isHovered] = useHover();
+
+  const handleLogout = () => {
+    logout(() => history.push('/'));
+  };
 
   return (
     <header className={header}>
       <p ref={hoverRef}>{isHovered ? '😁' : '☹️'}</p>
       {user ? (
-        <p>Thanks for leaving a note, {user.email}</p>
+        <>
+          <p>Thanks for leaving a note, {user.email.slice(0, 6)}</p>
+          <button onClick={handleLogout}>Log out</button>
+        </>
       ) : (
         <p>Welcome! Pls log in to sign guestbook C:</p>
       )}
