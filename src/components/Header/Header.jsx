@@ -20,7 +20,7 @@ export default function Header() {
       <p ref={hoverRef}>{isHovered ? '😁' : '☹️'}</p>
       {user ? (
         <>
-          <p>Thanks for leaving a note, {user.email.slice(0, 6)}</p>
+          <p>Thanks for leaving a note, {user.email.split('@')[0]}</p>
           <button onClick={handleLogout}>Log out</button>
         </>
       ) : (

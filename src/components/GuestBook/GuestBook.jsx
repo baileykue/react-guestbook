@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { useNote } from '../../context/NoteContext';
 
-import { useState } from 'react';
 import styles from './GuestBook.css';
 
 export default function GuestBook() {

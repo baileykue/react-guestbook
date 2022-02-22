@@ -1,26 +1,29 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 import { NoteProvider } from './context/NoteContext';
 import { UserProvider } from './context/UserContext';
 
-test('page renders with form and header', () => {
+test.only('page renders with form and header', () => {
   render(
-    <UserProvider>
-      <App />
-    </UserProvider>
+    <MemoryRouter initialEntries={['/guestbook']}>
+      <UserProvider user={'email: bailey@example.com'}>
+        <App />
+      </UserProvider>
+    </MemoryRouter>
   );
 
-  const header = screen.getByText(/welcome! pls sign guestbook c:/i);
+  const header = screen.getByText(/thanks for leaving a note, bailey/i);
   expect(header).toBeInTheDocument();
-
-  const nameInput = screen.getByLabelText(/your name/i);
-  expect(nameInput).toBeInTheDocument();
 
   const textInput = screen.getByLabelText(/your note/i);
   expect(textInput).toBeInTheDocument();
 
-  const button = screen.getByRole('button');
+  const emoji = screen.getByLabelText(/emojis/i);
+  expect(emoji).toBeInTheDocument();
+
+  const button = screen.getByRole('button', { name: /leave note/i });
   expect(button).toBeInTheDocument();
 });
 
@@ -52,4 +55,12 @@ test('user is able to add a note', () => {
 
   const note = screen.getByText(/hello world/i);
   expect(note).toBeInTheDocument();
+});
+
+test('that the login form properly renders', () => {
+  render(
+    <UserProvider>
+      <App />
+    </UserProvider>
+  );
 });
