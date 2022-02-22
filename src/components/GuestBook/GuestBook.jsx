@@ -1,11 +1,9 @@
 import { useNote } from '../../context/NoteContext';
-// import { useUser } from '../../context/UserContext';
 
 import { useState } from 'react';
 import styles from './GuestBook.css';
 
 export default function GuestBook() {
-  // const { user } = useUser();
   const { notes, setNotes } = useNote();
 
   const [message, setMessage] = useState('');
@@ -21,10 +19,6 @@ export default function GuestBook() {
     setEmoji('');
     setMessage('');
   }
-
-  // function handleReset() {
-  //   setName('');
-  // }
 
   return (
     <div>
@@ -93,8 +87,6 @@ export default function GuestBook() {
         </label>
 
         <button onClick={handleSubmit}>Leave Note</button>
-
-        {/* {user && <p onClick={handleReset}>Not {user}????</p>} */}
       </form>
     </div>
   );

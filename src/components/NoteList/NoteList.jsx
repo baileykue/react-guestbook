@@ -16,7 +16,7 @@ export default function NoteList() {
       {notes?.map((note) => (
         <div key={`${email}-${note.message}`} className={note_card}>
           <div className={note_text}>
-            <p>-{email}</p>
+            <p>-{email.slice(0, 6)}</p>
             <p>
               {note.message} {note.emoji}
             </p>
