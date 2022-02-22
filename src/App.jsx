@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 import Header from './components/Header/Header';
 import Home from './views/Home/Home';
@@ -14,12 +15,12 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Login />
           </Route>
-          <Route exact path="/guestbook">
+          <PrivateRoute path="/guestbook">
             <Home />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
     </div>

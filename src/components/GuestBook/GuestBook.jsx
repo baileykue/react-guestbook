@@ -1,14 +1,13 @@
 import { useNote } from '../../context/NoteContext';
-import { useUser } from '../../context/UserContext';
+// import { useUser } from '../../context/UserContext';
 
 import { useState } from 'react';
 import styles from './GuestBook.css';
 
 export default function GuestBook() {
-  const { user, setUser } = useUser();
+  // const { user } = useUser();
   const { notes, setNotes } = useNote();
 
-  const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [emoji, setEmoji] = useState('');
 
@@ -17,32 +16,19 @@ export default function GuestBook() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    setUser(name);
-    setNotes([...notes, { name, message, emoji }]);
+    setNotes([...notes, { message, emoji }]);
 
     setEmoji('');
     setMessage('');
   }
 
-  function handleReset() {
-    setUser('');
-    setName('');
-  }
+  // function handleReset() {
+  //   setName('');
+  // }
 
   return (
     <div>
       <form className={form}>
-        {!user && (
-          <label>
-            Your Name:
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-        )}
-
         <label>
           Your Note:
           <textarea
@@ -108,7 +94,7 @@ export default function GuestBook() {
 
         <button onClick={handleSubmit}>Leave Note</button>
 
-        {user && <p onClick={handleReset}>Not {user}????</p>}
+        {/* {user && <p onClick={handleReset}>Not {user}????</p>} */}
       </form>
     </div>
   );
