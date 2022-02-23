@@ -46,6 +46,6 @@ test('that the login form properly renders', () => {
   const emojis = screen.getByLabelText(/emojis:/i);
   expect(emojis).toBeInTheDocument();
 
-  // const noteButton = screen.getByRole('button', { name: /leave note/i });
-  // expect(noteButton).toBeInTheDocument();
+  const noteButton = screen.getByRole('button', { name: /leave note/i });
+  expect(noteButton).toBeInTheDocument();
 });
