@@ -7,8 +7,8 @@ export function UserProvider({ children }) {
 
   const login = (email, password) => {
     const loginSuccessful =
-      email === process.env.AUTH_EMAIL &&
-      password === process.env.AUTH_PASSWORD;
+      email === process.env.REACT_APP_AUTH_EMAIL &&
+      password === process.env.REACT_APP_AUTH_PASSWORD;
     if (loginSuccessful) setUser({ email });
     return loginSuccessful;
   };
