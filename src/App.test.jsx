@@ -31,7 +31,7 @@ test('that the login form properly renders', () => {
 
   userEvent.type(password, 'gitonup');
   expect(password).toHaveValue('gitonup');
-  screen.debug();
+
   userEvent.click(loginButton);
 
   const personalHeader = screen.getByText(/thanks for leaving a note, bailey/i);

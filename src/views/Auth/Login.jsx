@@ -18,7 +18,7 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(process.env.AUTH_EMAIL);
+
     const loginWasSuccessful = auth.login(formState.email, formState.password);
     {
       loginWasSuccessful
