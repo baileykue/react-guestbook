@@ -5,62 +5,47 @@ import App from './App';
 import { NoteProvider } from './context/NoteContext';
 import { UserProvider } from './context/UserContext';
 
-test.only('page renders with form and header', () => {
+test('that the login form properly renders', () => {
   render(
-    <MemoryRouter initialEntries={['/guestbook']}>
-      <UserProvider user={'email: bailey@example.com'}>
+    <MemoryRouter>
+      <UserProvider>
         <App />
       </UserProvider>
     </MemoryRouter>
   );
 
-  const header = screen.getByText(/thanks for leaving a note, bailey/i);
+  const header = screen.getByText(/welcome! pls log in to sign guestbook c:/i);
   expect(header).toBeInTheDocument();
 
-  const textInput = screen.getByLabelText(/your note/i);
-  expect(textInput).toBeInTheDocument();
+  const email = screen.getByLabelText(/email/i);
+  expect(email).toBeInTheDocument();
 
-  const emoji = screen.getByLabelText(/emojis/i);
-  expect(emoji).toBeInTheDocument();
+  const password = screen.getByLabelText(/password/i);
+  expect(password).toBeInTheDocument();
 
-  const button = screen.getByRole('button', { name: /leave note/i });
-  expect(button).toBeInTheDocument();
-});
+  const loginButton = screen.getByRole('button', { name: /log in/i });
+  expect(loginButton).toBeInTheDocument();
 
-test('user is able to add a note', () => {
-  render(
-    <UserProvider>
-      <NoteProvider>
-        <App />
-      </NoteProvider>
-    </UserProvider>
-  );
+  userEvent.type(email, 'bailey@example.com');
+  expect(email).toHaveValue('bailey@example.com');
 
-  const nameInput = screen.getByLabelText(/your name/i);
-  expect(nameInput).toBeInTheDocument();
-  userEvent.type(nameInput, 'bailey');
-  expect(nameInput.value).toBe('bailey');
+  userEvent.type(password, 'gitonup');
+  expect(password).toHaveValue('gitonup');
+  screen.debug();
+  userEvent.click(loginButton);
 
-  const textInput = screen.getByLabelText(/your note/i);
-  expect(textInput).toBeInTheDocument();
-  userEvent.type(textInput, 'hello world');
-  expect(textInput.value).toBe('hello world');
+  const personalHeader = screen.getByText(/thanks for leaving a note, bailey/i);
+  expect(personalHeader).toBeInTheDocument();
 
-  const button = screen.getByRole('button');
-  expect(button).toBeInTheDocument();
-  userEvent.click(button);
+  const logoutButton = screen.getByRole('button', { name: /log out/i });
+  expect(logoutButton).toBeInTheDocument();
 
-  const name = screen.getByText(/-bailey/i);
-  expect(name).toBeInTheDocument();
+  const yourNote = screen.getByLabelText(/your note:/i);
+  expect(yourNote).toBeInTheDocument();
 
-  const note = screen.getByText(/hello world/i);
-  expect(note).toBeInTheDocument();
-});
+  const emojis = screen.getByLabelText(/emojis:/i);
+  expect(emojis).toBeInTheDocument();
 
-test('that the login form properly renders', () => {
-  render(
-    <UserProvider>
-      <App />
-    </UserProvider>
-  );
+  const noteButton = screen.getByRole('button', { name: /leave note/i });
+  expect(noteButton).toBeInTheDocument();
 });
