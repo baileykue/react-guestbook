@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200&display=swap');
+
+.form {
+  font-family: 'Martel', serif;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.form input,
+textarea {
+  width: 250px;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 5px;
+  font-family: 'Martel', serif;
+  border: 2px solid black;
+}
+
+.form button {
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: 'Martel', serif;
+  border: 2px solid black;
+  margin-top: 25px;
+}
+
+.form button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.emojis {
+  border: 2px solid black;
+  width: 250px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.emojis input {
+  display: none;
+}
+
+input[type='radio']:checked + p {
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 45%;
+  padding: 5px;
+}

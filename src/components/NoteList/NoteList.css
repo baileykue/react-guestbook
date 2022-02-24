@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+
+.note_card {
+  width: 225px;
+  height: 225px;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 25px;
+  background-image: url('https://teachingrecipes.com/wp-content/blank-post-it-note-1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Kristi', cursive;
+  font-size: large;
+}
+
+.note_text {
+  padding-top: 30px;
+  padding-left: 35px;
+}
+
+.note_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200&display=swap');
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Martel', serif;
+  gap: 25px;
+}
+
+.header button {
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: 'Martel', serif;
+  border: 2px solid black;
+  height: 45px;
+}
+
+.header button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
