@@ -14,7 +14,7 @@ export default function Login() {
   const history = useHistory();
   const location = useLocation();
 
-  const { from } = location.state || { from: { pathname: '/guestbook' } };
+  const { from } = location.state || { from: { pathname: '/' } };
 
   const handleLogin = (e) => {
     e.preventDefault();

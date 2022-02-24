@@ -15,10 +15,10 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/login">
             <Login />
           </Route>
-          <PrivateRoute path="/guestbook">
+          <PrivateRoute path="/">
             <Home />
           </PrivateRoute>
         </Switch>
