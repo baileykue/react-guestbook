@@ -1,4 +1,4 @@
-import styles from './Authform.css';
+import styles from './AuthForm.css';
 
 export default function AuthForm({ handleFormChange, handleLogin, error }) {
   const { form } = styles;
